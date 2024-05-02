@@ -1,0 +1,43 @@
+*{
+    transition: ease all 0.5s;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+body{
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+a{
+    transition: all .3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6{
+   letter-spacing: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    color: #111111;
+    margin: 0;
+}
+
+p{
+    margin: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+}
