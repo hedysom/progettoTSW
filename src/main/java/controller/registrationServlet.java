@@ -22,6 +22,7 @@ public class registrationServlet extends HttpServlet {
         customer.setEmail(request.getParameter("email"));
         customer.setPassword(request.getParameter("password"));
         request.setAttribute("registrationResult", service.doSave(customer));
+        // request.getSession().setAttribute("customer", customer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/registration.jsp");
         dispatcher.forward(request, response);
 

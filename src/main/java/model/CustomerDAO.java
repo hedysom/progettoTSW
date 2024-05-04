@@ -18,7 +18,7 @@ public class CustomerDAO {
     public Customer doRetrieveById(int id) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT id, firstName, lastName, email FROM customerP WHERE id=?");
+                    con.prepareStatement("SELECT id, firstName, lastName, email FROM customers WHERE id=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -103,6 +103,26 @@ public class CustomerDAO {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             return rs.next(); // If the user's ID is in the admin table, rs.next() will be true
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public Customer doRetrieveByEmailPassword(String email, String password) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT id, firstName, lastName, email FROM customers WHERE email=? AND passwordHash=SHA1(?)");
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Customer p = new Customer();
+                p.setId(rs.getInt(1));
+                p.setFirstName(rs.getString(2));
+                p.setLastName(rs.getString(3));
+                p.setEmail(rs.getString(4));
+                return p;
+            }
+            return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
