@@ -4,16 +4,18 @@
 <body>
 <%@ include file="WEB-INF/header.jsp" %>
     <main>
+        <section class="content-section container">
         <form action="login" method="post">
-            <label for="email">Email :</label>
-            <input type="email"  placeholder="example@email.com" id="email" name="email" required>
-            <label for="password">Password :</label>
-            <input type="password" id="password" name="password" required>
+            <label for="email">Email :</label><br>
+            <input type="email"  placeholder="example@email.com" id="email" name="email" required><br>
+            <label for="password">Password :</label><br>
+            <input type="password" id="password" name="password" required><br>
             <input type="submit" value="Login">
         </form>
         <p>
-            New to Knitting Store? <a href="registrationForm.jsp">Register</a>
+            New to KnitJoy? <a href="registrationForm.jsp">Register</a>
         </p>
+        </section>
     </main>
 <%@include file = "WEB-INF/footer.jsp" %>
 </body>

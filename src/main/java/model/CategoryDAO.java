@@ -12,7 +12,7 @@ public class CategoryDAO{
 
     public Category doRetrieveByName(String name) {
         try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM category WHERE name=?");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM categories WHERE name=?");
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -29,7 +29,7 @@ public class CategoryDAO{
 
     public List<Category> doRetrieveAll() {
         try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM category");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM Categories");
             List<Category> categories = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

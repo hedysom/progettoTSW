@@ -17,7 +17,7 @@ public class ProductDAO {
     public Product doRetrieveById(int id) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT id, name, description, price FROM products WHERE id=?");
+                    con.prepareStatement("SELECT * FROM products WHERE id=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -26,6 +26,8 @@ public class ProductDAO {
                 p.setName(rs.getString(2));
                 p.setDescription(rs.getString(3));
                 p.setPrice(rs.getBigDecimal(4));
+                p.setStock(rs.getInt(5));
+                p.setCategory(rs.getString(6));
                 return p;
             }
             return null;
@@ -38,11 +40,13 @@ public class ProductDAO {
     public void doSave(Product product) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO products(name, description, price)  VALUES(?,?,?)",
+                    "INSERT INTO products(name, description, price, stock, category)  VALUES(?,?,?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, product.getName());
             ps.setString(2, product.getDescription());
             ps.setBigDecimal(3, product.getPrice());
+            ps.setInt(4, product.getStock());
+            ps.setString(5,product.getCategory());
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("INSERT error.");
             }
@@ -56,14 +60,15 @@ public class ProductDAO {
         }
     }
 
-    public void doUpdate(Customer customer) {
+    public void doUpdate(Product product) {
         try(Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "UPDATE customers SET firstName=?, lastName=?, email=? WHERE id=?");
-            ps.setString(1, customer.getFirstName());
-            ps.setString(2, customer.getLastName());
-            ps.setString(3, customer.getEmail());
-            ps.setInt(4, customer.getId());
+                    "UPDATE customers SET name=?, description=?, price=? ,stock=?, category=? WHERE id=?");
+            ps.setString(1, product.getName());
+            ps.setString(2, product.getDescription());
+            ps.setBigDecimal(3, product.getPrice());
+            ps.setString(4, product.getCategory());
+            ps.setInt(5, product.getId());
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("UPDATE error.");
             }
@@ -73,18 +78,44 @@ public class ProductDAO {
         }
     }
 
-    public List<Customer> doRetrieveAll() {
+    public List<Product> doRetrieveAll() {
         try (Connection con = ConPool.getConnection()) {
-            List<Customer> customers = new ArrayList<>();
+            List<Product> customers = new ArrayList<>();
             PreparedStatement ps =
-                    con.prepareStatement("SELECT * from customers");
+                    con.prepareStatement("SELECT * from products");
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
-                Customer p = new Customer();
+                Product p = new Product();
                 p.setId(rs.getInt("id"));
-                p.setFirstName(rs.getString("firstName"));
-                p.setLastName(rs.getString("lastName"));
-                p.setEmail(rs.getString("email"));
+                p.setName(rs.getString("Name"));
+                p.setDescription(rs.getString("Description"));
+                p.setPrice(rs.getBigDecimal("Price"));
+                p.setStock(rs.getInt("Stock"));
+                p.setCategory(rs.getString("Category"));
+                customers.add(p);
+            }
+            return customers;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Product> doRetrieveAllByCategory(String Category){
+
+        try (Connection con = ConPool.getConnection()) {
+            List<Product> customers = new ArrayList<>();
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT * from products where Category = ?");
+            ps.setString(1, Category);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                Product p = new Product();
+                p.setId(rs.getInt("id"));
+                p.setName(rs.getString("Name"));
+                p.setDescription(rs.getString("Description"));
+                p.setPrice(rs.getBigDecimal("Price"));
+                p.setStock(rs.getInt("Stock"));
+                p.setCategory(rs.getString("Category"));
                 customers.add(p);
             }
             return customers;

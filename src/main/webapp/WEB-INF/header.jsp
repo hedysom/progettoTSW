@@ -10,7 +10,7 @@
 <% Customer customer = (Customer) session.getAttribute("customer"); %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <header>
-        <nav>
+        <nav class="nav">
             <ul>
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="#">Products</a></li>
@@ -25,4 +25,5 @@
             <% } %>
             <a id="cart" href="#">Cart</a>
         </nav>
+        <h1 class = "store-name">KnitJoy</h1>
     </header>

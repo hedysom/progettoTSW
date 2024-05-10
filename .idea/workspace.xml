@@ -9,16 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399215cb-b56e-4264-b4ca-811dc5ef7727" name="Changes" comment="base + registrazione">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/initServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/loginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/logoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDAO.java" afterDir="false" />
+    <list default="true" id="399215cb-b56e-4264-b4ca-811dc5ef7727" name="Changes" comment="login/logout + categorie">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/categoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Accessories.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Handmade Knitware.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Kits.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Needles.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Patterns.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Yarn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/header_image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/products/2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/registrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/registrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/initServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/initServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrationForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrationForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +45,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -84,6 +99,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/images/products" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/images" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
@@ -193,7 +210,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714557048195</updated>
       <workItem from="1714557049418" duration="211000" />
-      <workItem from="1714557267168" duration="27824000" />
+      <workItem from="1714557267168" duration="81638000" />
     </task>
     <task id="LOCAL-00001" summary="base + registrazione">
       <option name="closed" value="true" />
@@ -203,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714663135069</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="login/logout + categorie">
+      <option name="closed" value="true" />
+      <created>1714826234117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714826234117</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +236,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base + registrazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="base + registrazione" />
+    <MESSAGE value="login/logout + categorie" />
+    <option name="LAST_COMMIT_MESSAGE" value="login/logout + categorie" />
   </component>
 </project>
