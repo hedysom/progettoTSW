@@ -4,6 +4,9 @@
 <body>
 <%@ include file="WEB-INF/header.jsp" %>
     <main>
+        <% if(request.getAttribute("error") != null) { %>
+        <p style="color: red;"><%= request.getAttribute("error") %></p>
+        <% } %>
         <section class="content-section container">
         <form action="login" method="post">
             <label for="email">Email :</label><br>

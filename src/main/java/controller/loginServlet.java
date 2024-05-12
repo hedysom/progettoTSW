@@ -14,8 +14,14 @@ public class loginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CustomerDAO service = new CustomerDAO();
         Customer customer = service.doRetrieveByEmailPassword(request.getParameter("email"), request.getParameter("password"));
-        request.getSession().setAttribute("customer", customer);
-        response.sendRedirect("index.jsp");
+        if(customer == null) {
+            request.setAttribute("error", "Invalid email or password.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+        else {
+            request.getSession().setAttribute("customer", customer);
+            response.sendRedirect("index.jsp");
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
