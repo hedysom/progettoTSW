@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 <%@ include file="WEB-INF/head.jsp"%>
-<body>
 <%@include file="WEB-INF/header.jsp"%>
     <main>
         <section class="content-section container">
@@ -20,5 +17,3 @@
         </section>
     </main>
 <%@include file = "WEB-INF/footer.jsp" %>
-</body>
-</html>

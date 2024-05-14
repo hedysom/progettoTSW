@@ -14,11 +14,7 @@ import java.util.Map;
 
 public class CartServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Cookie> cookies = new ArrayList<>();
         Cart cart = (Cart) request.getSession().getAttribute("cart");
-        if(cart == null) {
-            cookies = List.of(request.getCookies());
 
-        }
     }
 }

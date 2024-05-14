@@ -1,6 +1,6 @@
 package model;
 
-public class Adress {
+public class Address {
     private int id;
     private int customerId;
     private String street;
@@ -9,7 +9,7 @@ public class Adress {
     private String state;
     private String country;
 
-    public Adress() {
+    public Address() {
     }
 
     public int getId() {

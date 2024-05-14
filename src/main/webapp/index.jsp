@@ -1,9 +1,6 @@
 <%@ page import="model.Category" %>
 <%@ page import="java.util.List" %>
-<!DOCTYPE html>
-<html lang="en">
 <%@ include file="WEB-INF/head.jsp"%>
-<body>
 <%@ include file="WEB-INF/header.jsp" %>
 
 <main>
@@ -47,5 +44,3 @@
 </main>
 
 <%@include file = "WEB-INF/footer.jsp" %>
-</body>
-</html>

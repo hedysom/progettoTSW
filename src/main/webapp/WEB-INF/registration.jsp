@@ -5,10 +5,7 @@
   Time: 16:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <%@include file="head.jsp"%>
-<body>
 <%@include file="header.jsp"%>
 <% boolean result= (Boolean)request.getAttribute("registrationResult");
     if(result){ %>
@@ -19,6 +16,4 @@
         <p>There was an error processing your registration. Please try again.</p>
     <%}
 %>
-</body>
 <%@include file="footer.jsp"%>
-</html>

@@ -5,10 +5,11 @@
   Time: 12:26
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page import="model.Customer" %>
 <%@ page import="model.Product" %>
 <% Customer customer = (Customer) session.getAttribute("customer"); %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<body>
     <header>
         <nav class="nav">
             <ul>

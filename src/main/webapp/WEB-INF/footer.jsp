@@ -9,3 +9,5 @@
 <footer>
     <p>© 2024 KnitJoy </p>
 </footer>
+</body>
+</html>
