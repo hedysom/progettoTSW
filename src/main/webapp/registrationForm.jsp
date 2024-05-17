@@ -1,7 +1,7 @@
 <%@ include file="WEB-INF/head.jsp"%>
 <%@include file="WEB-INF/header.jsp"%>
     <main>
-        <section class="content-section container">
+        <section class="form-container">
         <h2>Create an account</h2>
         <form action="registration" method="post">
             <label for="email">Email :</label><br>

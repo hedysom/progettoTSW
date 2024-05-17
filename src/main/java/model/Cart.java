@@ -6,6 +6,15 @@ import model.CartItem;
 
 public class Cart {
     private List<CartItem> items;
+    private int customerID;
+
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
 
     public Cart() {
         items = new ArrayList<>();
@@ -29,5 +38,9 @@ public class Cart {
             total = total.add(item.getTotalPrice());
         }
         return total;
+    }
+
+    public boolean isEmpty() {
+        return items.isEmpty();
     }
 }

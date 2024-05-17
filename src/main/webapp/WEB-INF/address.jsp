@@ -9,14 +9,16 @@
 <%@include file="head.jsp"%>
 <%@include file="header.jsp"%>
 <main>
+    <section class="content-section container">
     <% List<Address> addresses = (List<Address>) request.getAttribute("addresses");
-    if(addresses.isEmpty()) {%>
+    if(addresses== null || addresses.isEmpty()) {%>
     <p>It seems like there are no shipment addresses associated with your profile.</p><br>
-    <a href="addressForm.jsp">Add a new address</a>
+    <a href="addressFormForward">Add a new address</a>
     <% } else {
         for(Address a: addresses){%>
     <h2>Address: <%=a.getStreet()%></h2>
-    <form action="modifyAddress" method="post">
+        <section>
+    <form action="modifyAddressForm" method="post">
         <input type="hidden" name="addressId" value="<%=a.getId()%>">
         <input type="hidden" name="customerId" value="<%=a.getCustomerId()%>">
         <table>
@@ -41,8 +43,11 @@
                 <td><%=a.getCountry()%></td>
             </tr>
         </table>
-        <input type="submit" value="Modify address">
+        <input type="submit" value="Modify/Delete address"> or
+        <a href="addressFormForward" > Add a new address</a>
     </form>
     <%}}%>
+        </section>
+    </section>
 </main>
 <%@include file="footer.jsp"%>

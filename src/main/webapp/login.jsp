@@ -4,12 +4,17 @@
         <% if(request.getAttribute("error") != null) { %>
         <p style="color: red;"><%= request.getAttribute("error") %></p>
         <% } %>
-        <section class="content-section container">
+        <section class="form-container">
+            <h2>Login</h2>
         <form action="login" method="post">
-            <label for="email">Email :</label><br>
-            <input type="email"  placeholder="example@email.com" id="email" name="email" required><br>
-            <label for="password">Password :</label><br>
-            <input type="password" id="password" name="password" required><br>
+            <section class="input-box">
+                <label for="email"></label>
+                <input type="email"  placeholder="Email" id="email" name="email" required>
+            </section>
+            <section class="input-box">
+                <label for="password"></label>
+                <input type="password" placeholder="Password" id="password" name="password" required><br>
+            </section>
             <input type="submit" value="Login">
         </form>
         <p>

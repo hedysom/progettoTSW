@@ -14,7 +14,6 @@ import java.io.IOException;
 @WebServlet("/registration")
 public class registrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
         CustomerDAO service = new CustomerDAO();
         Customer customer = new Customer();
         customer.setFirstName(request.getParameter("firstName"));
